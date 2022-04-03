@@ -29,7 +29,13 @@ export default function Layout({ children, option }) {
                 <span className="ml-2">首页</span>
               </Link>
             </li>
-            <li className="hover:text-slate-100">
+            <li
+              className={
+                option === "一体化作业"
+                  ? "text-slate-100"
+                  : "hover:text-slate-100"
+              }
+            >
               <Link to="/document">
                 <FontAwesomeIcon icon={faListCheck} fixedWidth />
                 <span className="ml-2">一体化作业</span>
