@@ -1,4 +1,7 @@
+import { faEdit } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import Layout from "../component/layout";
 
@@ -26,6 +29,7 @@ export default function Filter() {
             <tr>
               <th className="py-2 border border-slate-500">序号</th>
               <th className="py-2 border border-slate-500">标题</th>
+              <th className="py-2 border border-slate-500">操作</th>
             </tr>
           </thead>
           <tbody>
@@ -33,6 +37,11 @@ export default function Filter() {
               <tr key={v.id}>
                 <td className="p-2 border border-slate-500">{i + 1}</td>
                 <td className="p-2 border border-slate-500">{v.title}</td>
+                <td className="p-2 border border-slate-500 text-center">
+                  <Link to={`/document/${v.id}`} className="text-sky-500">
+                    <FontAwesomeIcon icon={faEdit} fixedWidth />
+                  </Link>
+                </td>
               </tr>
             ))}
           </tbody>
