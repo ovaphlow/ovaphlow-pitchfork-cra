@@ -1,7 +1,7 @@
 import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export const ButtonBack = ({ text, onClick }) => {
+export const ButtonBack = ({ text }) => {
   return (
     <button
       type="button"

@@ -2,9 +2,11 @@ import {
   faCode,
   faCogs,
   faHome,
+  faListCheck,
   faPieChart,
   faPlusSquare,
   faSignOut,
+  faUpload,
   faUsers,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -24,36 +26,48 @@ export default function Layout({ children, option }) {
             >
               <Link to="/">
                 <FontAwesomeIcon icon={faHome} fixedWidth />
-                首页
+                <span className="ml-2">首页</span>
+              </Link>
+            </li>
+            <li className="hover:text-slate-100">
+              <Link to="/document">
+                <FontAwesomeIcon icon={faListCheck} fixedWidth />
+                <span className="ml-2">一体化作业</span>
               </Link>
             </li>
             <li className="hover:text-slate-100">
               <Link to="/document/0">
                 <FontAwesomeIcon icon={faPlusSquare} fixedWidth />
-                新增作业
+                <span className="ml-2">新增作业</span>
+              </Link>
+            </li>
+            <li className="hover:text-slate-100">
+              <Link to="/">
+                <FontAwesomeIcon icon={faUpload} fixedWidth />
+                <span className="ml-2">上传作业计划</span>
               </Link>
             </li>
             <li className="hover:text-slate-100">
               <Link to="/stats">
                 <FontAwesomeIcon icon={faPieChart} fixedWidth />
-                统计数据
+                <span className="ml-2">统计数据</span>
               </Link>
             </li>
             <li className="mt-8 hover:text-slate-100">
               <Link to="/">
                 <FontAwesomeIcon icon={faUsers} fixedWidth />
-                用户
+                <span className="ml-2">用户</span>
               </Link>
             </li>
             <li className="hover:text-slate-100">
               <Link to="/">
                 <FontAwesomeIcon icon={faCogs} fixedWidth />
-                系统设置
+                <span className="ml-2">系统设置</span>
               </Link>
             </li>
             <li className="mt-8 hover:text-slate-100">
               <FontAwesomeIcon icon={faSignOut} fixedWidth />
-              退出登录
+              <span className="ml-2">退出登录</span>
             </li>
           </ul>
         </div>
