@@ -25,18 +25,13 @@ export default function SettingList() {
   };
 
   useEffect(() => {
-    setSettingList([]);
-    handleFetchSetting();
-  }, []);
-
-  useEffect(() => {
-    fetch(`/api/simple/setting?option=filterBy-refId&refId=0`)
+    fetch("/api/simple/setting?option=filterBy-refId&refId=0")
       .then((response) => {
         if (response.status < 400) return response.json();
         else throw new Error("请求数据失败");
       })
       .then((data) => {
-        setSettingList(data);
+        setCategoryList(data.map((v) => ({ id: v.id, name: JSON.parse(v.detail).name })));
       })
       .catch((err) => window.console.error(err));
   }, []);
@@ -57,7 +52,7 @@ export default function SettingList() {
     } else {
       handleFetchSetting();
     }
-  }, [category]);
+  }, [category, categoryList]);
 
   return (
     <Layout option="系统设置">

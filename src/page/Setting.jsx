@@ -11,7 +11,6 @@ export default function Setting() {
   const [datalist, setDatalist] = useState([]);
   const { id } = useParams();
   const [name, setName] = useState("");
-  const [refId, setRefId] = useState(0);
   const [ref1Id, setRef1Id] = useState(0);
 
   const handleRemove = () => {
@@ -87,7 +86,6 @@ export default function Setting() {
           else throw new Error("请求数据失败");
         })
         .then((data) => {
-          setRefId(data.refId);
           setRef1Id(data.ref1Id);
           setName(JSON.parse(data.detail).name);
           setContent(JSON.parse(data.detail).content);
