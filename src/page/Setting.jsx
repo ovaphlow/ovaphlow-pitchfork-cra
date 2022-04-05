@@ -87,7 +87,6 @@ export default function Setting() {
           else throw new Error("请求数据失败");
         })
         .then((data) => {
-          console.log(data);
           setRefId(data.refId);
           setRef1Id(data.ref1Id);
           setName(JSON.parse(data.detail).name);
