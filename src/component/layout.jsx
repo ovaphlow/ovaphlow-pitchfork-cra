@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 export default function Layout({ children, option }) {
   return (
     <>
-      <div className="bg-slate-800 w-48 h-full fixed flex flex-col">
+      <div className="bg-slate-800 w-60 h-full fixed flex flex-col">
         <div className="flex-1">
           <p className="text-slate-300 text-2xl text-center py-3">一体化作业</p>
           <ul className="pt-6 pl-5 text-slate-400 grid gap-y-3">
@@ -92,7 +92,7 @@ export default function Layout({ children, option }) {
           </p>
         </div>
       </div>
-      <div className="ml-48 p-3">{children}</div>
+      <div className="ml-60 p-3">{children}</div>
     </>
   );
 }
