@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { ButtonBack, ButtonDanger, ButtonPrimary } from "../component/Button";
 import { Input } from "../component/Input";
 import Layout from "../component/Layout";
+import { PageTitle } from "../component/Title";
 
 export default function Document() {
   const [pageTitle, setPageTitle] = useState("");
@@ -70,7 +71,7 @@ export default function Document() {
 
   return (
     <Layout>
-      <p className="text-3xl">{pageTitle}</p>
+      <PageTitle text={pageTitle} />
       <div className="bg-white p-2 mt-6">
         <ButtonBack />
       </div>

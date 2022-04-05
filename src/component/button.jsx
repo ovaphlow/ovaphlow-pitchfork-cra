@@ -37,3 +37,15 @@ export const ButtonPrimary = ({ text, onClick }) => {
     </button>
   );
 };
+
+export const ButtonSecondary = ({ text, onClick }) => {
+  return (
+    <button
+      type="button"
+      className="bg-teal-500 p-2 text-white shadow rounded w-16"
+      onClick={onClick}
+    >
+      {text || ""}
+    </button>
+  );
+};
