@@ -2,8 +2,7 @@ import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
-import Layout from "../component/layout";
+import Layout from "../component/Layout";
 
 export default function Filter() {
   const [documentList, setDocumentList] = useState([]);
@@ -18,7 +17,7 @@ export default function Filter() {
         setDocumentList(data);
       })
       .catch((err) => window.console.error(err));
-  }, [])
+  }, []);
 
   return (
     <Layout option="一体化作业">

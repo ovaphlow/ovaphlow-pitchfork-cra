@@ -65,8 +65,14 @@ export default function Layout({ children, option }) {
                 <span className="ml-2">用户</span>
               </Link>
             </li>
-            <li className="hover:text-slate-100">
-              <Link to="/">
+            <li
+              className={
+                option === "系统设置"
+                  ? "text-slate-100"
+                  : "hover:text-slate-100"
+              }
+            >
+              <Link to="/setting">
                 <FontAwesomeIcon icon={faCogs} fixedWidth />
                 <span className="ml-2">系统设置</span>
               </Link>

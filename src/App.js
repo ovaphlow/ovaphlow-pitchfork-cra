@@ -1,16 +1,17 @@
 import { Routes, Route } from "react-router-dom";
-import Document from "./page/document";
-import Filter from "./page/filter";
-
-import Home from "./page/home";
+import Document from "./page/Document";
+import Filter from "./page/Filter";
+import Home from "./page/Home";
+import SettingList from "./page/SettingList";
 
 function App() {
   return (
     <>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/document/:id" element={<Document />} />
         <Route path="/document" element={<Filter />} />
+        <Route path="/document/:id" element={<Document />} />
+        <Route path="/setting" element={<SettingList />} />
       </Routes>
     </>
   );

@@ -23,8 +23,8 @@ export const ButtonDanger = ({ text, onClick }) => {
     >
       {text || "删除"}
     </button>
-  )
-}
+  );
+};
 
 export const ButtonPrimary = ({ text, onClick }) => {
   return (

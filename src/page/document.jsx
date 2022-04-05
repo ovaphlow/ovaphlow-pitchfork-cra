@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { ButtonBack, ButtonDanger, ButtonPrimary } from "../component/button";
-import { Input } from "../component/input";
-
-import Layout from "../component/layout";
+import { ButtonBack, ButtonDanger, ButtonPrimary } from "../component/Button";
+import { Input } from "../component/Input";
+import Layout from "../component/Layout";
 
 export default function Document() {
   const [pageTitle, setPageTitle] = useState("");
@@ -13,7 +12,7 @@ export default function Document() {
   const handleRemove = () => {
     if (window.confirm("确定要删除当前的数据吗？")) {
       fetch(`/api/simple/biz/document/${id}`, {
-        method: "DELETE"
+        method: "DELETE",
       })
         .then((response) => {
           if (response.status < 400) window.history.back();
@@ -21,12 +20,12 @@ export default function Document() {
         })
         .catch((err) => window.alert(err));
     }
-  }
+  };
   const handleSubmit = () => {
     if (id > 0) {
       fetch(`/api/simple/biz/document/${id}`, {
         method: "PUT",
-        headers: {"content-type": "application/json"},
+        headers: { "content-type": "application/json" },
         body: JSON.stringify({ title }),
       })
         .then((response) => {
@@ -67,7 +66,7 @@ export default function Document() {
         })
         .catch((err) => window.console.error(err));
     }
-  }, [id])
+  }, [id]);
 
   return (
     <Layout>
@@ -99,9 +98,7 @@ export default function Document() {
       </div>
       <div className="bg-white p-2 mt-6 flex justify-between">
         <ButtonPrimary text="提交" onClick={handleSubmit} />
-        {id > 0 && (
-          <ButtonDanger text="删除" onClick={handleRemove} />
-        )}
+        {id > 0 && <ButtonDanger text="删除" onClick={handleRemove} />}
       </div>
     </Layout>
   );
