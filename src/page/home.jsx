@@ -8,7 +8,7 @@ export default function Home() {
           <p className="text-4xl">首页</p>
         </div>
         <div className="mt-6">
-          <div className="bg-white w-full h-40 p-1">asdioadj</div>
+          <div className="bg-white w-full h-40 p-1">asdiasdasdoadj</div>
         </div>
       </div>
     </Layout>
