@@ -31,7 +31,9 @@ export default function SettingList() {
         else throw new Error("请求数据失败");
       })
       .then((data) => {
-        setCategoryList(data.map((v) => ({ id: v.id, name: JSON.parse(v.detail).name })));
+        setCategoryList(
+          data.map((v) => ({ id: v.id, name: JSON.parse(v.detail).name }))
+        );
       })
       .catch((err) => window.console.error(err));
   }, []);

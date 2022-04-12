@@ -2,7 +2,7 @@ import { Input } from "./Input";
 
 export const Box = ({ children }) => {
   return (
-    <div className="bg-white p-3 mt-6 w-full shadow-md rounded">{children}</div>
+    <div className="bg-white p-4 mt-4 w-full shadow-md rounded">{children}</div>
   );
 };
 

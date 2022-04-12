@@ -18,7 +18,7 @@ export default function Layout({ children, option }) {
       <div className="bg-slate-800 w-60 h-full fixed flex flex-col">
         <div className="flex-1">
           <p className="text-slate-300 text-2xl text-center py-3">一体化作业</p>
-          <ul className="pt-6 pl-5 text-slate-400 grid gap-y-3">
+          <ul className="pt-8 pl-8 text-slate-400 grid gap-y-3">
             <li
               className={
                 option === "首页" ? "text-slate-100" : "hover:text-slate-100"
@@ -32,8 +32,8 @@ export default function Layout({ children, option }) {
             <li
               className={
                 option === "一体化作业"
-                  ? "text-slate-100"
-                  : "hover:text-slate-100"
+                  ? "text-slate-100 mt-8"
+                  : "hover:text-slate-100 mt-8"
               }
             >
               <Link to="/document">
@@ -53,14 +53,20 @@ export default function Layout({ children, option }) {
                 <span className="ml-2">上传作业计划</span>
               </Link>
             </li>
-            <li className="hover:text-slate-100">
+            <li className="hover:text-slate-100 mt-8">
               <Link to="/stats">
                 <FontAwesomeIcon icon={faPieChart} fixedWidth />
                 <span className="ml-2">统计数据</span>
               </Link>
             </li>
-            <li className="mt-8 hover:text-slate-100">
-              <Link to="/">
+            <li
+              className={
+                option === "用户"
+                  ? "text-slate-100 mt-8"
+                  : "hover:text-slate-100 mt-8"
+              }
+            >
+              <Link to="/user">
                 <FontAwesomeIcon icon={faUsers} fixedWidth />
                 <span className="ml-2">用户</span>
               </Link>
@@ -83,7 +89,7 @@ export default function Layout({ children, option }) {
             </li>
           </ul>
         </div>
-        <div className="flex-none text-slate-400 text-center text-sm">
+        <div className="flex-none text-slate-300 text-center text-sm p-4">
           <p>
             开源项目
             <br />
@@ -92,7 +98,7 @@ export default function Layout({ children, option }) {
           </p>
         </div>
       </div>
-      <div className="ml-60 p-3">{children}</div>
+      <div className="ml-60 p-6">{children}</div>
     </>
   );
 }
