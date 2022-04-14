@@ -2,6 +2,7 @@ import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { Box, Table, TableTD } from "../component/Container";
 import Layout from "../component/Layout";
 
 export default function Filter() {
@@ -22,30 +23,54 @@ export default function Filter() {
   return (
     <Layout option="一体化作业">
       <p className="text-3xl">一体化作业</p>
-      <div className="bg-white mt-6 p-2">
-        <table className="w-full border-collapse border border-slate-500">
-          <thead className="bg-slate-300">
-            <tr>
-              <th className="py-2 border border-slate-500">序号</th>
-              <th className="py-2 border border-slate-500">标题</th>
-              <th className="py-2 border border-slate-500">操作</th>
-            </tr>
-          </thead>
-          <tbody>
+      <div className="mt-4"></div>
+      <Box>
+        <div className="grid gap-4">
+          <Table
+            thead={["序号", "作业部门", "车组", "作业时间", "标题", "操作"]}
+          >
             {documentList.map((v, i) => (
               <tr key={v.id}>
-                <td className="p-2 border border-slate-500">{i + 1}</td>
-                <td className="p-2 border border-slate-500">{v.title}</td>
-                <td className="p-2 border border-slate-500 text-center">
-                  <Link to={`/document/${v.id}`} className="text-sky-500">
-                    <FontAwesomeIcon icon={faEdit} fixedWidth />
-                  </Link>
-                </td>
+                <TableTD>
+                  <p className="text-center">{i + 1}</p>
+                </TableTD>
+                <TableTD>
+                  <p className="text-center">
+                    {JSON.parse(v.detail).dept}
+                    <br />
+                    {JSON.parse(v.detail).manager}
+                    <span className="text-slate-600">
+                      ({JSON.parse(v.detail).managerPhone})
+                    </span>
+                  </p>
+                </TableTD>
+                <TableTD>
+                  <p className="text-center">{v.train}</p>
+                </TableTD>
+                <TableTD>
+                  <p className="text-center">
+                    <span>{v.timeBegin}</span>
+                    <br />
+                    <span className="text-slate-500">至</span>
+                    <br />
+                    <span>{v.timeEnd}</span>
+                  </p>
+                </TableTD>
+                <TableTD>
+                  【{JSON.parse(v.detail).category}】{v.title}
+                </TableTD>
+                <TableTD>
+                  <p className="text-center">
+                    <Link to={`/document/${v.id}`} className="text-sky-500">
+                      <FontAwesomeIcon icon={faEdit} fixedWidth />
+                    </Link>
+                  </p>
+                </TableTD>
               </tr>
             ))}
-          </tbody>
-        </table>
-      </div>
+          </Table>
+        </div>
+      </Box>
     </Layout>
   );
 }
