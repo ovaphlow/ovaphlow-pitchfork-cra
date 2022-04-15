@@ -8,11 +8,11 @@
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/react-fontawesome": "^0.1.18",
     "blueimp-md5": "^2.19.0",
-    "dayjs": "^1.11.0",
+    "dayjs": "^1.11.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.3.0",
-    "react-scripts": "5.0.0",
+    "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -43,7 +43,7 @@
     "autoprefixer": "^10.4.4",
     "postcss": "^8.4.12",
     "prettier": "^2.6.2",
-    "tailwindcss": "^3.0.23"
+    "tailwindcss": "^3.0.24"
   },
   "proxy": "http://localhost:8080"
 }

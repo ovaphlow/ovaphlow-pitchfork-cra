@@ -43,7 +43,7 @@ export default function Document() {
     }
   };
   const handleSubmit = () => {
-    if (id > 0) {
+    if (parseInt(id, 10) > 0) {
       fetch(`/api/simple/biz/document/${id}`, {
         method: "PUT",
         headers: { "content-type": "application/json" },
@@ -105,13 +105,13 @@ export default function Document() {
   };
 
   useEffect(() => {
-    if (id > 0) {
+    if (parseInt(id, 10) > 0) {
       setPageTitle("一体化作业");
     } else setPageTitle("新增作业");
   }, [id]);
 
   useEffect(() => {
-    if (id > 0) {
+    if (parseInt(id, 10) > 0) {
       fetch(`/api/simple/biz/document/${id}`)
         .then((response) => {
           if (response.status < 400) return response.json();
@@ -150,7 +150,7 @@ export default function Document() {
   }, [id]);
 
   return (
-    <Layout>
+    <Layout option={"新增作业"}>
       <PageTitle text={pageTitle} />
       <div className="m-4"></div>
       <Box>
@@ -240,7 +240,7 @@ export default function Document() {
           />
         </div>
         <div className="mt-8 flex justify-between">
-          {id > 0 ? (
+          {parseInt(id, 10) > 0 ? (
             <ButtonDanger text="删除" onClick={handleRemove} />
           ) : (
             <span></span>

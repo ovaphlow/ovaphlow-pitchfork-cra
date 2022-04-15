@@ -41,7 +41,13 @@ export default function Layout({ children, option }) {
                 <span className="ml-2">一体化作业</span>
               </Link>
             </li>
-            <li className="hover:text-slate-100">
+            <li
+              className={
+                option === "新增作业"
+                  ? "text-slate-100"
+                  : "hover:text-slate-100"
+              }
+            >
               <Link to="/document/0">
                 <FontAwesomeIcon icon={faPlusSquare} fixedWidth />
                 <span className="ml-2">新增作业</span>
