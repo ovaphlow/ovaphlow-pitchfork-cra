@@ -153,10 +153,11 @@ export default function Document() {
   return (
     <Layout option={"新增作业"}>
       <PageTitle text={pageTitle} />
-      <div className="m-4"></div>
-      <Box>
+      <div className="my-4">
         <ButtonBack />
-        <div className="grid gap-4 mt-8">
+      </div>
+      <Box>
+        <div className="grid gap-4">
           <BoxInput
             text="申请单位"
             value={dept}
@@ -246,7 +247,10 @@ export default function Document() {
           ) : (
             <span></span>
           )}
-          <ButtonPrimary text="提交" onClick={handleSubmit} />
+          <div>
+            <ButtonPrimary text="提交" onClick={handleSubmit} />
+            <ButtonPrimary text="技术员审核" onClick={() => window.location.href = `/document/${id}/${title}/approve/pjsy`} />
+          </div>
         </div>
       </Box>
     </Layout>

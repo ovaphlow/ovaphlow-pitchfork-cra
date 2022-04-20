@@ -20,7 +20,7 @@ export const BoxInput = ({ text, type, value, onChange }) => {
 export const BoxInputCombo = ({ text, value, datalistId, onChange }) => {
   return (
     <div className="w-full flex">
-      <div className="w-24 flex-none text-center pt-1">
+      <div className="w-32 flex-none text-center pt-1">
         <label>{text}</label>
       </div>
       <Input

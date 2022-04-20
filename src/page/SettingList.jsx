@@ -59,29 +59,29 @@ export default function SettingList() {
   return (
     <Layout option="系统设置">
       <PageTitle text="系统设置" />
+      <div className="my-4">
+        <div className="flex justify-between">
+          <ButtonBack />
+          <ButtonSecondary
+            text="新增"
+            onClick={() => (window.location.href = "/setting/0")}
+          />
+        </div>
+      </div>
       <Box>
         <div className="grid grid-cols-1 divide-y gap-3 divide-slate-300">
-          <div className="flex justify-between">
-            <ButtonBack />
-            <ButtonSecondary
-              text="新增"
-              onClick={() => (window.location.href = "/setting/0")}
-            />
-          </div>
-          <div className="pt-3">
-            <select
-              value={category}
-              className="w-24 border-slate-400 border rounded px-2 py-1"
-              onChange={(e) => setCategory(e.target.value)}
-            >
-              <option value="">未选择</option>
-              {categoryList.map((v) => (
-                <option key={v.id} value={v.name}>
-                  {v.name}
-                </option>
-              ))}
-            </select>
-          </div>
+          <select
+            value={category}
+            className="w-24 border-slate-400 border rounded px-2 py-1"
+            onChange={(e) => setCategory(e.target.value)}
+          >
+            <option value="">未选择</option>
+            {categoryList.map((v) => (
+              <option key={v.id} value={v.name}>
+                {v.name}
+              </option>
+            ))}
+          </select>
           <div className="pt-3">
             <Table thead={["序号", "分类", "名称", "内容", "操作"]}>
               {settingList.map((v, i) => (

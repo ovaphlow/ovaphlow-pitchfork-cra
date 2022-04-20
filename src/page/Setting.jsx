@@ -26,8 +26,11 @@ export default function Setting() {
     }
   };
   const handleSubmit = () => {
-    const _refId = datalist[datalist.map((v) => v.name).indexOf(category)].id;
-    if (id > 0) {
+    let _refId = 0;
+    if (category) {
+      _refId = datalist[datalist.map((v) => v.name).indexOf(category)].id;
+    }
+    if (parseInt(id, 10) > 0) {
       fetch(`/api/simple/setting/${id}`, {
         method: "PUT",
         headers: { "content-type": "application/json" },
@@ -98,11 +101,13 @@ export default function Setting() {
   return (
     <Layout option="系统设置">
       <PageTitle text="系统设置" />
+      <div className="my-4">
+        <div className="flex justify-between">
+          <ButtonBack />
+        </div>
+      </div>
       <Box>
         <div className="grid grid-cols-1 divide-y gap-3 divide-slate-300">
-          <div className="flex justify-between">
-            <ButtonBack />
-          </div>
           <div className="pt-3">
             <div className="grid grid-col-1 gap-3">
               <BoxInputCombo
@@ -130,9 +135,9 @@ export default function Setting() {
               />
             </div>
           </div>
-          <div className="pt-3 flex justify-end">
-            <div className="grid grid-flow-col auto-cols-max gap-3">
-              {id > 0 && <ButtonDanger onClick={handleRemove} />}
+          <div className="pt-3">
+            <div className="flex flex-row justify-between">
+              {parseInt(id, 10) > 0 && category !== "" ? <ButtonDanger onClick={handleRemove} /> : <span></span>}
               <ButtonPrimary onClick={handleSubmit} />
             </div>
           </div>

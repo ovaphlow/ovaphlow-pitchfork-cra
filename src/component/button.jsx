@@ -5,7 +5,7 @@ export const ButtonBack = ({ text }) => {
   return (
     <button
       type="button"
-      className="bg-slate-300 shadow rounded px-2 py-1 w-20"
+      className="bg-slate-200 shadow rounded px-2 py-1 w-20"
       onClick={() => window.history.back()}
     >
       <FontAwesomeIcon icon={faAngleLeft} fixedWidth />
