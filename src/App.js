@@ -4,6 +4,7 @@ import DocumentApprovePjsy from "./page/DocumentApprovePjsy";
 import Filter from "./page/Filter";
 import Home from "./page/Home";
 import Setting from "./page/Setting";
+import Stats from "./page/Stats";
 import SettingList from "./page/SettingList";
 import SignIn from "./page/SignIn";
 import User from "./page/User";
@@ -18,6 +19,7 @@ function App() {
         <Route path="/document/:id" element={<Document />} />
         <Route path="/document" element={<Filter />} />
         <Route path="/setting/:id" element={<Setting />} />
+        <Route path="/stats" element={<Stats />} />
         <Route path="/setting" element={<SettingList />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/user/:id" element={<User />} />
