@@ -8,7 +8,7 @@ import { PageTitle } from "../component/Title";
 export default function DocumentApprovePjsy() {
   const { id, title } = useParams();
 
-  const [bizDocument, setBizDocument] = useState({ id: 0 });
+  const [bizDocument, setBizDocument] = useState({ id: 0 }); //
   const [pbz, setPbz] = useState("无");
   const [pbzList, setPbzList] = useState([]);
   const [qc, setQc] = useState("无");
