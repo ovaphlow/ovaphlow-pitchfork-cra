@@ -250,6 +250,13 @@ export default function Document() {
           <div>
             <ButtonPrimary text="提交" onClick={handleSubmit} />
             <ButtonPrimary text="技术员审核" onClick={() => window.location.href = `/document/${id}/${title}/approve/pjsy`} />
+            <ButtonPrimary text="调度审核" onClick={() => window.alert("调度审核")} />
+            <ButtonPrimary text="班组签字" onClick={() => window.alert("班组签字")} />
+            <ButtonPrimary text="作业负责人销记" onClick={() => window.alert("作业负责人销记")} />
+            <ButtonPrimary text="监控班组签字" onClick={() => window.alert("监控班组签字")} />
+            <ButtonPrimary text="工长签字" onClick={() => window.alert("工长签字")} />
+            <ButtonPrimary text="质检签字" onClick={() => window.alert("质检签字")} />
+            <ButtonPrimary text="值班干部签字" onClick={() => window.alert("值班干部签字")} />
           </div>
         </div>
       </Box>
