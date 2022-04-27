@@ -118,7 +118,6 @@ export default function Document() {
           else throw new Error("请求数据失败");
         })
         .then((data) => {
-          console.log(data)
           const {
             dept,
             manager,
