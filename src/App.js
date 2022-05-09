@@ -9,6 +9,7 @@ import SettingList from "./page/SettingList";
 import SignIn from "./page/SignIn";
 import User from "./page/User";
 import UserList from "./page/UserList";
+import UploadSchedule from "./page/UploadSchedule";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/document/:id/:title/approve/pjsy" element={<DocumentApprovePjsy />} />
         <Route path="/document/:id" element={<Document />} />
         <Route path="/document" element={<Filter />} />
+        <Route path="/upload-schedule" element={<UploadSchedule />} />
         <Route path="/setting/:id" element={<Setting />} />
         <Route path="/stats" element={<Stats />} />
         <Route path="/setting" element={<SettingList />} />

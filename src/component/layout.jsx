@@ -54,7 +54,7 @@ export default function Layout({ children, option }) {
               </Link>
             </li>
             <li className="hover:text-slate-100">
-              <Link to="/">
+              <Link to="/upload-schedule">
                 <FontAwesomeIcon icon={faUpload} fixedWidth />
                 <span className="ml-2">上传作业计划</span>
               </Link>
