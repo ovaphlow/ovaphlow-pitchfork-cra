@@ -19,7 +19,7 @@
     "build": "react-scripts build",
     "dev": "react-scripts start",
     "eslint": "eslint --fix src",
-    "format": "prettier --write src",
+    "format": "prettier --tab-width 4 --print-width 100 --write src",
     "start": "react-scripts start"
   },
   "eslintConfig": {

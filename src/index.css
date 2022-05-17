@@ -5,10 +5,10 @@
 html,
 body,
 #root {
-  height: 100vh;
+    height: 100vh;
 }
 
 body {
-  /* background-color: rgb(241 245 249); */
-  background-color: rgb(209 213 219);
+    /* background-color: rgb(241 245 249); */
+    background-color: rgb(209 213 219);
 }
