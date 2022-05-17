@@ -10,12 +10,15 @@ import SignIn from "./page/SignIn";
 import User from "./page/User";
 import UserList from "./page/UserList";
 import UploadSchedule from "./page/UploadSchedule";
+import Review from "./page/Review";
 
 function App() {
   return (
     <>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/document/review" element={<Review />} />
+        <Route path="/document/:id/:title/review" element={<Review />} />
         <Route path="/document/:id/:title/approve/pjsy" element={<DocumentApprovePjsy />} />
         <Route path="/document/:id" element={<Document />} />
         <Route path="/document" element={<Filter />} />
