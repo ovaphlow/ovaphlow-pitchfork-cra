@@ -6,7 +6,7 @@ import BoxInput from "../component/BoxInput";
 import BoxSelect from "../component/BoxSelect";
 import ButtonBack from "../component/ButtonBack";
 import ButtonDanger from "../component/ButtonDanger";
-import ButtonPrimary from "../component/ButtonPrimary";
+import ButtonFlow from "../component/ButtonFlow";
 import Layout from "../component/Layout";
 import PageTitle from "../component/PageTitle";
 
@@ -15,7 +15,6 @@ export default function Document() {
 
     const [category, setCategory] = useState("普查");
     const [dept, setDept] = useState("");
-    const [deptList, setDeptList] = useState([]);
     const [manager, setManager] = useState("");
     const [managerPhone, setManagerPhone] = useState("");
     const [operator, setOperator] = useState("");
@@ -246,31 +245,7 @@ export default function Document() {
                     ) : (
                         <span></span>
                     )}
-                    <div>
-                        <ButtonPrimary text="提交" onClick={handleSubmit} />
-                        <ButtonPrimary
-                            text="技术员审核"
-                            onClick={() =>
-                                (window.location.href = `/document/${id}/${title}/approve/pjsy`)
-                            }
-                        />
-                        <ButtonPrimary text="调度审核" onClick={() => window.alert("调度审核")} />
-                        <ButtonPrimary text="班组签字" onClick={() => window.alert("班组签字")} />
-                        <ButtonPrimary
-                            text="作业负责人销记"
-                            onClick={() => window.alert("作业负责人销记")}
-                        />
-                        <ButtonPrimary
-                            text="监控班组签字"
-                            onClick={() => window.alert("监控班组签字")}
-                        />
-                        <ButtonPrimary text="工长签字" onClick={() => window.alert("工长签字")} />
-                        <ButtonPrimary text="质检签字" onClick={() => window.alert("质检签字")} />
-                        <ButtonPrimary
-                            text="值班干部签字"
-                            onClick={() => window.alert("值班干部签字")}
-                        />
-                    </div>
+                    <ButtonFlow handleSave={handleSubmit} id={id} title={title} />
                 </div>
             </Box>
         </Layout>
