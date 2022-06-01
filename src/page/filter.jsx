@@ -2,8 +2,9 @@ import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Box, Table, TableTD } from "../component/Container";
+import Box from "../component/Box";
 import Layout from "../component/Layout";
+import Table, { Td } from "../component/Table";
 
 export default function Filter() {
     const [documentList, setDocumentList] = useState([]);
@@ -29,10 +30,10 @@ export default function Filter() {
                     <Table thead={["序号", "作业部门", "车组", "作业时间", "标题", "操作"]}>
                         {documentList.map((v, i) => (
                             <tr key={v.id}>
-                                <TableTD>
+                                <Td>
                                     <p className="text-center">{i + 1}</p>
-                                </TableTD>
-                                <TableTD>
+                                </Td>
+                                <Td>
                                     <p className="text-center">
                                         {JSON.parse(v.detail).dept}
                                         <br />
@@ -41,11 +42,11 @@ export default function Filter() {
                                             ({JSON.parse(v.detail).managerPhone})
                                         </span>
                                     </p>
-                                </TableTD>
-                                <TableTD>
+                                </Td>
+                                <Td>
                                     <p className="text-center">{v.train}</p>
-                                </TableTD>
-                                <TableTD>
+                                </Td>
+                                <Td>
                                     <p className="text-center">
                                         <span>{v.timeBegin}</span>
                                         <br />
@@ -53,17 +54,17 @@ export default function Filter() {
                                         <br />
                                         <span>{v.timeEnd}</span>
                                     </p>
-                                </TableTD>
-                                <TableTD>
+                                </Td>
+                                <Td>
                                     【{JSON.parse(v.detail).category}】{v.title}
-                                </TableTD>
-                                <TableTD>
+                                </Td>
+                                <Td>
                                     <p className="text-center">
                                         <Link to={`/document/${v.id}`} className="text-sky-500">
                                             <FontAwesomeIcon icon={faEdit} fixedWidth />
                                         </Link>
                                     </p>
-                                </TableTD>
+                                </Td>
                             </tr>
                         ))}
                     </Table>

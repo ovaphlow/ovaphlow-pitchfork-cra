@@ -1,4 +1,4 @@
-export const Input = ({ type, value, datalistId, onChange }) => {
+const Input = ({ type, value, datalistId, onChange }) => {
     return (
         <input
             type={type || "text"}
@@ -9,3 +9,5 @@ export const Input = ({ type, value, datalistId, onChange }) => {
         />
     );
 };
+
+export default Input;

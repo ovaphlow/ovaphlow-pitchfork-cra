@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { ButtonBack } from "../component/Button";
-import { Box } from "../component/Container";
+import ButtonBack from "../component/ButtonBack";
+import Box from "../component/Box";
 import Layout from "../component/Layout";
-import { PageTitle } from "../component/Title";
+import PageTitle from "../component/PageTitle";
 
 export default function Review() {
     const [remark, setRemark] = useState("");

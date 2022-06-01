@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { ButtonBack, ButtonDanger, ButtonPrimary } from "../component/Button";
-import { Box, BoxInput, BoxInputCombo } from "../component/Container";
+import Box from "../component/Box";
+import BoxInput from "../component/BoxInput";
+import BoxInputCombo from "../component/BoxInputCombo";
+import ButtonPrimary from "../component/ButtonPrimary";
+import ButtonBack from "../component/ButtonBack";
+import ButtonDanger from "../component/ButtonDanger";
 import Layout from "../component/Layout";
-import { PageTitle } from "../component/Title";
+import PageTitle from "../component/PageTitle";
 
 export default function Setting() {
     const [category, setCategory] = useState("");

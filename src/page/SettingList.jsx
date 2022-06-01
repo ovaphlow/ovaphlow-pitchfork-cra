@@ -2,10 +2,12 @@ import { faEdit } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ButtonBack, ButtonSecondary } from "../component/Button";
-import { Box, Table } from "../component/Container";
+import ButtonBack from "../component/ButtonBack";
+import ButtonSecondary from "../component/ButtonSecondary";
+import Box from "../component/Box";
 import Layout from "../component/Layout";
-import { PageTitle } from "../component/Title";
+import PageTitle from "../component/PageTitle";
+import Table, { Td } from "../component/Table";
 
 export default function SettingList() {
     const [category, setCategory] = useState("");
@@ -83,23 +85,15 @@ export default function SettingList() {
                         <Table thead={["序号", "分类", "名称", "内容", "操作"]}>
                             {settingList.map((v, i) => (
                                 <tr key={v.id}>
-                                    <td className="p-2 border border-slate-500 text-center">
-                                        {i + 1}
-                                    </td>
-                                    <td className="p-2 border border-slate-500 text-center">
-                                        {JSON.parse(v.tag).join(",")}
-                                    </td>
-                                    <td className="p-2 border border-slate-500">
-                                        {JSON.parse(v.detail).name}
-                                    </td>
-                                    <td className="p-2 border border-slate-500">
-                                        {JSON.parse(v.detail).content}
-                                    </td>
-                                    <td className="p-2 border border-slate-500 text-center">
+                                    <Td>{i + 1}</Td>
+                                    <Td>{JSON.parse(v.tag).join(",")}</Td>
+                                    <Td>{JSON.parse(v.detail).name}</Td>
+                                    <Td>{JSON.parse(v.detail).content}</Td>
+                                    <Td>
                                         <Link to={`/setting/${v.id}`} className="text-blue-500">
                                             <FontAwesomeIcon icon={faEdit} fixedWidth />
                                         </Link>
-                                    </td>
+                                    </Td>
                                 </tr>
                             ))}
                         </Table>

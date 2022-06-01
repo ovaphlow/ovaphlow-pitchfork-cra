@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { ButtonBack } from "../component/Button";
+import ButtonBack from "../component/ButtonBack";
 import Layout from "../component/Layout";
-import { PageTitle } from "../component/Title";
+import PageTitle from "../component/PageTitle";
 
 export default function UploadSchedule() {
     const [documentList, setDocumentList] = useState([]);

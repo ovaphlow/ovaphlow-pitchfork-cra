@@ -1,10 +1,14 @@
 import dayjs from "dayjs";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { ButtonBack, ButtonDanger, ButtonPrimary } from "../component/Button";
-import { Box, BoxInput, BoxSelect } from "../component/Container";
+import Box from "../component/Box";
+import BoxInput from "../component/BoxInput";
+import BoxSelect from "../component/BoxSelect";
+import ButtonBack from "../component/ButtonBack";
+import ButtonDanger from "../component/ButtonDanger";
+import ButtonPrimary from "../component/ButtonPrimary";
 import Layout from "../component/Layout";
-import { PageTitle } from "../component/Title";
+import PageTitle from "../component/PageTitle";
 
 export default function Document() {
     const { id } = useParams();
