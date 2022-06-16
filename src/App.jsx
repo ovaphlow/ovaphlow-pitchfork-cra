@@ -1,16 +1,17 @@
+import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Document from "./page/Document";
-import DocumentApprovePjsy from "./page/DocumentApprovePjsy";
-import Filter from "./page/Filter";
-import Home from "./page/Home";
-import Setting from "./page/Setting";
-import Stats from "./page/Stats";
-import SettingList from "./page/SettingList";
-import SignIn from "./page/SignIn";
-import User from "./page/User";
-import UserList from "./page/UserList";
-import UploadSchedule from "./page/UploadSchedule";
-import Review from "./page/Review";
+import Document from "./pages/Document";
+import DocumentApprovePjsy from "./pages/DocumentApprovePjsy";
+import Filter from "./pages/Filter";
+import Home from "./pages/Home";
+import Setting from "./pages/Setting";
+import Stats from "./pages/Stats";
+import SettingList from "./pages/SettingList";
+import SignIn from "./pages/SignIn";
+import User from "./pages/User";
+import UserList from "./pages/UserList";
+import UploadSchedule from "./pages/UploadSchedule";
+import Review from "./pages/Review";
 
 function App() {
     return (

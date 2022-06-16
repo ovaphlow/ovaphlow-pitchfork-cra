@@ -10,6 +10,8 @@ import {
     faUsers,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import PropTypes from "prop-types";
+import React from "react";
 import { Link } from "react-router-dom";
 
 export default function Layout({ children, option }) {
@@ -104,3 +106,8 @@ export default function Layout({ children, option }) {
         </>
     );
 }
+
+Layout.propTypes = {
+    option: PropTypes.string,
+    children: PropTypes.node,
+};

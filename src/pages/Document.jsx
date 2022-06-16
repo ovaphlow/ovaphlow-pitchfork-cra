@@ -1,14 +1,14 @@
 import dayjs from "dayjs";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Box from "../component/Box";
-import BoxInput from "../component/BoxInput";
-import BoxSelect from "../component/BoxSelect";
-import ButtonBack from "../component/ButtonBack";
-import ButtonDanger from "../component/ButtonDanger";
-import ButtonFlow from "../component/ButtonFlow";
-import Layout from "../component/Layout";
-import PageTitle from "../component/PageTitle";
+import Box from "../components/Box";
+import BoxInput from "../components/BoxInput";
+import BoxSelect from "../components/BoxSelect";
+import ButtonBack from "../components/ButtonBack";
+import ButtonDanger from "../components/ButtonDanger";
+import ButtonFlow from "../components/ButtonFlow";
+import Layout from "../components/Layout";
+import PageTitle from "../components/PageTitle";
 
 export default function Document() {
     const { id } = useParams();
@@ -41,6 +41,7 @@ export default function Document() {
                 .catch((err) => window.alert(err));
         }
     };
+
     const handleSubmit = () => {
         if (parseInt(id, 10) > 0) {
             fetch(`/api/simple/biz/document/${id}`, {

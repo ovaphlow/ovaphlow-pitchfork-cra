@@ -1,12 +1,13 @@
 import { faEdit } from "@fortawesome/free-regular-svg-icons";
+import { faLink } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Box from "../component/Box";
-import ButtonPrimary from "../component/ButtonPrimary";
-import Layout from "../component/Layout";
-import PageTitle from "../component/PageTitle";
-import Table, { Td } from "../component/Table";
+import Box from "../components/Box";
+import ButtonPrimary from "../components/ButtonPrimary";
+import Layout from "../components/Layout";
+import PageTitle from "../components/PageTitle";
+import Table, { Td } from "../components/Table";
 
 export default function UserList() {
     const [userList, setUserList] = useState([]);
@@ -37,11 +38,18 @@ export default function UserList() {
                 <Table thead={["序号", "用户名", "电话", "部门", "操作"]}>
                     {userList.map((v, i) => (
                         <tr key={v.id}>
-                            <Td className="p-2 border border-slate-500 text-center">{i + 1}</Td>
-                            <Td className="p-2 border border-slate-500">{v.name}</Td>
-                            <Td className="p-2 border border-slate-500">{v.phone}</Td>
-                            <Td className="p-2 border border-slate-500">{v.dept}</Td>
-                            <Td className="p-2 border border-slate-500 text-center">
+                            <Td>{i + 1}</Td>
+                            <Td>
+                                <Link to={`/user/${v.id}`}>
+                                    {v.name}
+                                    <span className="text-neutral-400">
+                                        <FontAwesomeIcon icon={faLink} fixedWidth />
+                                    </span>
+                                </Link>
+                            </Td>
+                            <Td>{v.phone}</Td>
+                            <Td>{v.dept}</Td>
+                            <Td>
                                 <Link to={`/user/${v.id}`}>
                                     <FontAwesomeIcon icon={faEdit} fixedWidth />
                                 </Link>

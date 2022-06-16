@@ -1,8 +1,8 @@
-export default function reducer(state, action) {
+export const reducer = (state, action) => {
     if (action.type === "set") {
         return {
             ...state,
-            [action.payload.key]: action.payload.value,
+            [action.key]: action.value,
         };
     } else {
         return state;

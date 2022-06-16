@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
-import ButtonBack from "../component/ButtonBack";
-import Layout from "../component/Layout";
-import PageTitle from "../component/PageTitle";
+import React, { useEffect, useState } from "react";
+import ButtonBack from "../components/ButtonBack";
+import Layout from "../components/Layout";
+import PageTitle from "../components/PageTitle";
 
 export default function UploadSchedule() {
     const [documentList, setDocumentList] = useState([]);
@@ -42,7 +42,6 @@ export default function UploadSchedule() {
     useEffect(() => {
         // url 地址 / 接口
         // 异步的请求 / 函数
-        /*
         fetch("/api/simple/biz/document", {
             method: "GET", // 默认 GET
         })
@@ -55,7 +54,6 @@ export default function UploadSchedule() {
                 setDocumentList(data);
             })
             .catch((err) => window.alert(err));
-            */
     }, []);
 
     return (

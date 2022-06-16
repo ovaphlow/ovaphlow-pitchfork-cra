@@ -1,17 +1,16 @@
 import md5 from "blueimp-md5";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Box from "../component/Box";
-import BoxInput from "../component/BoxInput";
-import ButtonPrimary from "../component/ButtonPrimary";
-import ButtonBack from "../component/ButtonBack";
-import ButtonDanger from "../component/ButtonDanger";
-import Layout from "../component/Layout";
-import PageTitle from "../component/PageTitle";
+import Box from "../components/Box";
+import BoxInput from "../components/BoxInput";
+import ButtonPrimary from "../components/ButtonPrimary";
+import ButtonBack from "../components/ButtonBack";
+import ButtonDanger from "../components/ButtonDanger";
+import Layout from "../components/Layout";
+import PageTitle from "../components/PageTitle";
 
 export default function User() {
     const { id } = useParams();
-
     const [name, setName] = useState("");
     const [phone, setPhone] = useState("");
     const [dept, setDept] = useState("");
@@ -28,6 +27,7 @@ export default function User() {
                 .catch((err) => window.alert(err));
         }
     };
+
     const handleSubmit = () => {
         if (parseInt(id, 10) > 0) {
             fetch(`/api/simple/user/${id}`, {

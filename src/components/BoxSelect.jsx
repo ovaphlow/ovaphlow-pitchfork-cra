@@ -1,3 +1,6 @@
+import PropTypes from "prop-types";
+import React from "react";
+
 const BoxSelect = ({ text, value, onChange, option }) => {
     return (
         <div className="w-full flex flex-row">
@@ -17,6 +20,13 @@ const BoxSelect = ({ text, value, onChange, option }) => {
             </select>
         </div>
     );
+};
+
+BoxSelect.propTypes = {
+    text: PropTypes.string,
+    value: PropTypes.string,
+    option: PropTypes.object,
+    onChange: PropTypes.func,
 };
 
 export default BoxSelect;

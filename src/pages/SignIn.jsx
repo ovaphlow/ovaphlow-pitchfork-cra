@@ -1,8 +1,8 @@
 import md5 from "blueimp-md5";
-import { useState } from "react";
-import BoxInput from "../component/BoxInput";
-import ButtonPrimary from "../component/ButtonPrimary";
-import PageTitle from "../component/PageTitle";
+import React, { useState } from "react";
+import BoxInput from "../components/BoxInput";
+import ButtonPrimary from "../components/ButtonPrimary";
+import PageTitle from "../components/PageTitle";
 
 export default function SignIn() {
     const [name, setName] = useState("");

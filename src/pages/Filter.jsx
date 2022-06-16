@@ -1,10 +1,10 @@
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Box from "../component/Box";
-import Layout from "../component/Layout";
-import Table, { Td } from "../component/Table";
+import Box from "../components/Box";
+import Layout from "../components/Layout";
+import Table, { Td } from "../components/Table";
 
 export default function Filter() {
     const [documentList, setDocumentList] = useState([]);

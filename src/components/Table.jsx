@@ -1,3 +1,6 @@
+import PropTypes from "prop-types";
+import React from "react";
+
 const Table = ({ thead, children }) => {
     return (
         <table className="w-full border-collapse border border-slate-500">
@@ -15,8 +18,17 @@ const Table = ({ thead, children }) => {
     );
 };
 
+Table.propTypes = {
+    thead: PropTypes.object,
+    children: PropTypes.node,
+};
+
 export const Td = ({ children }) => {
     return <td className="p-2 border border-slate-500">{children}</td>;
+};
+
+Td.propTypes = {
+    children: PropTypes.node,
 };
 
 export default Table;

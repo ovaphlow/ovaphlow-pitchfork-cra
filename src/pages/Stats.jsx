@@ -1,7 +1,16 @@
-import { ResponsiveContainer, LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from "recharts";
-import Box from "../component/Box";
-import Layout from "../component/Layout";
-import PageTitle from "../component/PageTitle";
+import React from "react";
+import {
+    ResponsiveContainer,
+    LineChart,
+    Line,
+    CartesianGrid,
+    XAxis,
+    YAxis,
+    Tooltip,
+} from "recharts";
+import Box from "../components/Box";
+import Layout from "../components/Layout";
+import PageTitle from "../components/PageTitle";
 
 export default function Stats() {
     const data = [

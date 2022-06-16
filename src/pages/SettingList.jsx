@@ -1,13 +1,13 @@
 import { faEdit } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import ButtonBack from "../component/ButtonBack";
-import ButtonSecondary from "../component/ButtonSecondary";
-import Box from "../component/Box";
-import Layout from "../component/Layout";
-import PageTitle from "../component/PageTitle";
-import Table, { Td } from "../component/Table";
+import ButtonBack from "../components/ButtonBack";
+import ButtonSecondary from "../components/ButtonSecondary";
+import Box from "../components/Box";
+import Layout from "../components/Layout";
+import PageTitle from "../components/PageTitle";
+import Table, { Td } from "../components/Table";
 
 export default function SettingList() {
     const [category, setCategory] = useState("");

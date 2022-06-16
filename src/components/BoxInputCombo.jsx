@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+import React from "react";
 import Input from "./Input";
 
 const BoxInputCombo = ({ text, value, datalistId, onChange }) => {
@@ -9,6 +11,13 @@ const BoxInputCombo = ({ text, value, datalistId, onChange }) => {
             <Input type="text" value={value} datalistId={datalistId} onChange={onChange} />
         </div>
     );
+};
+
+BoxInputCombo.propTypes = {
+    text: PropTypes.string,
+    value: PropTypes.string,
+    datalistId: PropTypes.string,
+    onChange: PropTypes.func,
 };
 
 export default BoxInputCombo;

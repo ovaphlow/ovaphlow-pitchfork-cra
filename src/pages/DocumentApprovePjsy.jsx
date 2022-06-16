@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Box from "../component/Box";
-import BoxSelect from "../component/BoxSelect";
-import ButtonPrimary from "../component/ButtonPrimary";
-import ButtonBack from "../component/ButtonBack";
-import Layout from "../component/Layout";
-import PageTitle from "../component/PageTitle";
+import Box from "../components/Box";
+import BoxSelect from "../components/BoxSelect";
+import ButtonPrimary from "../components/ButtonPrimary";
+import ButtonBack from "../components/ButtonBack";
+import Layout from "../components/Layout";
+import PageTitle from "../components/PageTitle";
 
 export default function DocumentApprovePjsy() {
     const { id, title } = useParams();
@@ -36,6 +36,8 @@ export default function DocumentApprovePjsy() {
                 .catch((err) => window.console.error(err));
         }
     }, [id, title]);
+
+    useEffect(() => window.console.log(bizDocument), [bizDocument]);
 
     useEffect(() => {
         const url = [
